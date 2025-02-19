@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ruby's Personal Website</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #1a1a1a; /* black */
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Flower Background */
+        .flower-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png'), url('https://cdn.pixabay.com/photo/2017/08/30/01/10/flower-2698454_960_720.jpg');
+            background-size: cover, 100%;
+            background-blend-mode: multiply;
+            animation: backgroundAnimation 20s infinite;
+            z-index: -1;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Content */
+        .content {
+            text-align: center;
+            color: #d1a7b8; /* lilac */
+            z-index: 1;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+            border-radius: 10px;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            color: #c24e5b; /* maroon */
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 15px 40px;
+            background-color: #c24e5b; /* maroon */
+            color: #1a1a1a; /* black */
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #d1a7b8; /* lilac */
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        /* About Section */
+        .about {
+            margin-top: 50px;
+            color: #d1a7b8; /* lilac */
+            font-size: 18px;
+            background-color: #292929; /* dark grey */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about h2 {
+            color: #c24e5b; /* maroon */
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-top: 50px;
+            color: #fff;
+            font-size: 18px;
+            background: linear-gradient(to right, #c24e5b, #d1a7b8); /* gradient from maroon to lilac */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .contact .contact-info {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact a:hover {
+            color: #c24e5b; /* maroon */
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #444;
+            border: 1px solid #555;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #1a1a1a; /* black */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .contact button:hover {
+            background-color: #c24e5b; /* maroon */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Flower Background -->
+    <div class="flower-background"></div>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <h1>Welcome to Ruby's Digital World</h1>
+        <p>Explore my personalized space, where creativity meets technology. This is my digital sanctuary, a glimpse into my journey and vision.</p>
+        <button class="button" onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });">Let's Connect</button>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="about">
+        <h2>About Me</h2>
+        <p>
+            Hi, I'm Ruby! I'm passionate about technology, design, and art. I explore the boundaries where these worlds collide. This website is a personal space where I share my thoughts, projects, and creative endeavors.
+        </p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact" id="contact-section">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or want to connect, feel free to reach out to me!</p>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:rubybenadine@gmail.com">rubybenadine@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+254740421044">0740421044</a></p>
+        </div>
+
+        <form action="#">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2025 Ruby. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>
